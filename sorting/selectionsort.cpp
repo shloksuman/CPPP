@@ -10,8 +10,10 @@ void selectionsort(int arr[] , int n){
             }
         }                               //at the end of the loop , we have the Index of Minimum value in the unsorted
         swap(arr[minIndex] , arr[i]) ;  // now we swap the initial value , i , with the newly found(if not found ,
-    }                                   //  then the element is swapped with itself) minIndex's element value
-}
+                                        //  then the element is swapped with itself) minIndex's element value
+    }
+    //swap(&arr[minIndex],&arr[i]);     //important line to code while submitting online on gfg ... the '&' is important
+    }                                   //otherwise it LEADS TO SEGMENTATION FAULT
 
 void printarray(int arr[] , int size){
     for(int i=0 ; i<size;i++){
