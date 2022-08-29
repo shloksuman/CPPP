@@ -6,9 +6,9 @@ void bubblesort(int arr[] , int n){
                                     // j<=n-i //pattern that we observe // in round 2 , we dont again check compare with the last element
                                     // as it is already sorted , so everytime in subsequent rounds , we reduce the search size by i,, 
                                     // that is , we subtract i from n .. j <= n - i 
-        for(int j= 0 ; j<=n-i ; j++){ //j=0 , since we start our search for the ith largest element from the initial element
+        for(int j= 0 ; j<n-i-1 ; j++){ //j=0 , since we start our search for the ith largest element from the initial element
             if(arr[j]>arr[j+1]){                 
-                swap(arr[j] , arr[j+1]) ; // swapping if greater value found
+                swap(arr[j] , arr[j+1]) ; // swapping if greater value found // add '&' while submitting in gfg
             }
         }                              
     }                                   
