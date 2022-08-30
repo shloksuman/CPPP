@@ -35,8 +35,8 @@ int count_triangle(int arr[] , int n){
     sort(arr , arr+n) ;
     int count = 0 ;
     for(int i=0 ; i<n-2 ; i++){
-        int k = i+2 ; 
-        for(int j=i+1 ; j<n ; j++){
+        int k = i+2 ;       //storing the third index starting from ith index in k
+        for(int j=i+1 ; j<n ; j++){ //traversing all the elements after ith index
             while(k<n && arr[i]+arr[j]>arr[k]){
                 ++k ;
             }
