@@ -10,11 +10,13 @@ void insertionsort(int arr[] , int n){
                 arr[j+1]= arr[j];
             }
             else break;
-        }                      
+        } 
+        cout << "value of j at the end of second for loop before arr[j+1]= temp command : " << j << endl ;
+        cout << "also the value of temp : " << temp << endl ;                     
         arr[j+1] = temp  ;  
                                     
     }
-}                                   
+}
 
 void printarray(int arr[] , int size){
     for(int i=0 ; i<size;i++){
@@ -24,9 +26,9 @@ void printarray(int arr[] , int size){
 
 int main(){
 
-    int arr[4] = { 6, 3 , 4 ,8 } ;
-    insertionsort(arr , 4) ;
+    int arr[2] = { 6,  4 } ;
+    insertionsort(arr , 2) ;
     cout << "The sorted array is : " ;
-    printarray(arr , 4) ;
+    printarray(arr , 2) ;
 
 }
