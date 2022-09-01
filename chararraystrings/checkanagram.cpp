@@ -6,8 +6,8 @@ bool checkanagram(string a , string b ){
 
     //incrementing the frequency array
     for(int i = 0 ; i<a.length() ; i++){
-        char ch = a[i] ;
-        int index = ch - 'a' ;
+        char ch = a[i] ;                //storing the character in char ch
+        int index = ch - 'a' ;          //subtracting 'a' to get the ascii value mapped to it
         freq[index]++ ;
     }
 
@@ -35,4 +35,6 @@ int main(){
     string aa = "babbar" ;
     string bb = "rrrbbb" ;
     cout << "The strings " << aa << " " << bb << " are anagram, return 1 else 0 : " << checkanagram(aa , bb ) << endl ;
+
+    return 0;
 }
