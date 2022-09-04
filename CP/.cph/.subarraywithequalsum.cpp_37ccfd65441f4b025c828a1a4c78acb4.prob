@@ -1,0 +1,1 @@
+{"name":"Local: subarraywithequalsum","url":"c:\\Coding\\CPP\\CP\\subarraywithequalsum.cpp","tests":[{"id":1662216746111,"input":"4\n85 22 5 40","output":"0"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Coding\\CPP\\CP\\subarraywithequalsum.cpp","group":"local","local":true}
