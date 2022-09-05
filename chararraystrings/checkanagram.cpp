@@ -10,6 +10,10 @@ bool checkanagram(string a , string b ){
         int index = ch - 'a' ;          //subtracting 'a' to get the ascii value mapped to it
         freq[index]++ ;
     }
+    // for(auto i : a){
+    //     int index = a[i]-'a' ;
+    //     freq[index]++ ;
+    // }
 
     //decrementing the frequency array
     for(int i = 0 ; i<b.length() ; i++){
@@ -17,6 +21,11 @@ bool checkanagram(string a , string b ){
         int index = ch - 'a' ;
         freq[index]-- ;
     }
+
+    // for(auto i : b){
+    //     int index = b[i]-'a' ;
+    //     freq[index]-- ;
+    // }
 
     for(int i=0 ; i<26 ; i++){
         if(freq[i]!=0){
