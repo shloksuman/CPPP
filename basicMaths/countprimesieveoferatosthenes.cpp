@@ -9,14 +9,19 @@ int soe(int n){
     vector<bool> prime(n+1, true) ; // vector with ASSUMING ALL ELEMENTS TO BE PRIME
     prime[0]=prime[1]=false ;       // 0 and 1 ko non prime set kro
 
-    for(int i=2; i<n;i++){
+    for(int i=2; i<=n;i++){
         if(prime[i]){
             count++;                // prime no milne pe COUNTER value increment kro
+            cout << "i = " << i << " count = " << count << endl;
         }
-        for(int j=2*i; j<n; j=j+i){
+        for(int j=2*i; j<=n; j=j+i){
             prime[j]=false;         //phir USKE TABLE MEIN JITNE NO HAIN UNKO FALSE YAA NON PRIME SET KRO
         }
     }
+   // cout << "prime[n]= " << prime[n] << endl; to know that the last number is prime
+   if(prime[n]){
+    return count-1;
+   }
     return count ;
 }
 
@@ -25,7 +30,7 @@ int main(){
     int n;
     cin >>n ;
     int count= soe(n);
-    cout << "The number of primes till (excluding) " << n << " is : " << count << endl;
+    cout << "The number of primes till (including) " << n << " is : " << count << endl;
 
     return 0;
 }
