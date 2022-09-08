@@ -11,6 +11,12 @@ bool isPowerOfTwo(int n) {
         if(n==1){
             return true;
         }
+         //OPTIMAL METHOD  
+        int ans = n & n-1 ;
+        if(ans == 0){
+            return true;
+        }
+        /*
         int x = 1 ;
         unsigned long long int i=1;
         while(i<=n){
@@ -21,21 +27,21 @@ bool isPowerOfTwo(int n) {
                 return true;
             }
         }
-        
+        */
         
     return false ;
 
 }
 
  bool isPowerOfThree(int n) {
-      
-    
         if(n<=0){
             return false ;
         }
         if(n==1){
             return true;
         }
+
+
         int x = 1 ;
         unsigned long long int i=1;
         while(i<=n){
@@ -47,7 +53,7 @@ bool isPowerOfTwo(int n) {
             }
         }
         
-        
+      
         return false ;
 
     }
