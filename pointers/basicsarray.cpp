@@ -46,6 +46,15 @@ int main(){
     char ch[] = "abcd" ;
     char *p = ch ;
     cout << "*p = " << *p << endl ;
+    cout << "p = " << p << endl ;
+
+    cout << "---- applying pointer on char sentence[] = entering random sentence   and printing " << endl ;
+
+    char sentence[]= "entering random sentence" ;
+    char *s = sentence;
+    cout << "s = " << s << endl;
+    cout << "*s = " << *s << endl;
+    cout << "&s = " << &s << endl;
 
     return 0;
 }
