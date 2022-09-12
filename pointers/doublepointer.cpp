@@ -54,9 +54,18 @@ int main(){
     // int *p = a++ ;       //GIVES ERROR : LVALUE REQUIRED AS INCREMENT OPERAND
     // cout << *p << endl ;
 
-    int a[] = {  4, 5 ,6 ,7 ,8} ; // a's address is 100
-    int *p = a + 1 ; // p gets address 100 + 4 = 104 stored in it
-    cout << *a + 9 << endl ; // add 9 to value at a[0] , we get 9 + 4 = 13 
+    // int a[] = {  4, 5 ,6 ,7 ,8} ; // a's address is 100
+    // int *p = a + 1 ; // p gets address 100 + 4 = 104 stored in it
+    // cout << *a + 9 << endl ; // add 9 to value at a[0] , we get 9 + 4 = 13 
+
+    // char ch[] = "xyz" ;
+    // char *p = &ch[0] ;
+    // cout << p << endl ;
+
+    char s[]="hello" ;
+    char *p = s ;
+    cout << s[0] << endl ;
+    cout << p[0] << endl;
 
     return 0;
 }
