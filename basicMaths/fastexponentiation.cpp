@@ -1,22 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-void createArr(int arr[], int size){
-    cout << "Enter the elements of the array : " ;
-    for(int i=0 ; i<size ; i++){
-        cin >> arr[i] ;                
-    }
-}
-
-//PRINTING ARRAY
-void printarray(int arr[], int size) {
-    cout << "The array is : " ;
-    for (int i = 0; i < size; i++)
-    {
-        cout << arr[i] << endl ;        
-    }  
-}
-
 int fastexponentiation(int x , int n){      //TIME COMPLEXITY IS O(LOG N) OR O(LOG EXPONENT)
     int res = 1;
     while(n>0){
