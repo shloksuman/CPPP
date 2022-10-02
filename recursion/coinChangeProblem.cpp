@@ -11,10 +11,13 @@ int solve(int coins[], int n , int amount , int currentCoin){
 
     int ways =0 ;
 
-    for(int i =0 ; i< n ; i++){
-        ways+= solve(coins, n , amount - coins[i], ) ;
+    for(int i =currentCoin ; i< n ; i++){
+        cout << "amount : " << amount << " || currentCoinIndex : " <<  i << " and Value : " << coins[i] << " || i : " << i << endl ;
+        cout << "ways : " << ways << endl; 
+        ways+= solve(coins, n , amount - coins[i] , i) ;
     }
 
+    cout << "ways before return call : " << ways << endl;
     return ways ;
 }
 
@@ -24,7 +27,7 @@ int main(){
     int size =2 ;
 
     int ans= solve(coins , size , amount , 0) ;
-    cout << ans << endl ;
+    cout << "Final answer is : " << ans << endl ;
     
     return 0;
 }
