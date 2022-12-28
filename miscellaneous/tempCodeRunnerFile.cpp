@@ -1,0 +1,1 @@
+ if(getSum(b)*b==n){
