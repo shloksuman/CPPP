@@ -4,7 +4,7 @@ using namespace std;
 void searchintwod(int arr[][2] , int n ,  int target){ //REMEMBER TO DEFINE THE COLUMN IN 2D ARRAY
 int flag=0 ;
     for(int i=0 ; i<n ; i++){
-        for(int j=0;j<n;j++){
+        for(int j=0;j<2;j++){
             if(arr[i][j]==target){
                 flag = 1;
                 break;
@@ -26,7 +26,7 @@ int main(){
     int n = 2;
     //input values in the matrix
      for(int i=0; i<n ; i++){
-        for(int j=0 ; j<n ; j++){
+        for(int j=0 ; j<2 ; j++){
             cin>> arr[i][j] ;
         }
         
