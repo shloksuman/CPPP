@@ -33,6 +33,7 @@ void expVector(){
     vector<int> v2(v3) ; //copied v1 to v2
 
     vector<int> v1 = { 3 , 5 ,7 ,9 ,11 ,13} ;
+    vector<int> v4(v1) ;
 
     //ITERATION //AUTO // ITERATION //AUTO
 
@@ -46,6 +47,9 @@ void expVector(){
     it  = it + 2 ;  // jumps two places to the right i.e from 1st to 3rd
     cout << "after it+2  =  " << *(it) << endl ; 
 
+    //v1.back() = prints last element of the vector
+    cout << "Print v1.back() = " << v1.back() << endl ;
+
    // vector<int>::iterator it = v1.end() ;  // points to element last+1 ; to get last element , do it--
 
     cout << "printing v1 using iterator it : " ;
@@ -54,17 +58,47 @@ void expVector(){
     }
 
     cout << "\nprinting v1 using auto it : "  ;
-    for(auto it = v1.begin() ; it!= v1.end() ; it++){
+    for(auto it = v1.begin() ; it!= v1.end() ; it++){ //here ---it--- is auto assigned as an ITERATOR
         cout << *(it) << " " ;
     }
 
     //for each loop
      cout << "\nprinting v1 using for each auto loop auto it:v1  =  " ;
-    for(auto it : v1){ //here it is NOT an iterator like previous .. auto assigned it int data type
+    for(auto it : v1){ //here ---it--- is NOT an iterator like previous .. auto assigned it int data type
         cout << it << " " ;
     }
 
-     
+     //DELETION //ERASE // DELETION
+     v1.erase(v1.begin()+2) ; //deletes (begin = 1) + 2 = 3rd element in { 3,5,7,9,11,13} 
+     cout << "\nprinting vector after v1.erase(v1.begin()+2) = " ;
+     for(auto it: v1){ cout << it << " " ;}
+    //FOR RANGE DELETION 
+            //START         //ENDS JUST BEFORE THIS
+    v1.erase(v1.begin()+1 , v1.begin()+4 ) ; 
+    cout << "\nprinting vector after v1.erase(v1.begin()+1 , v1.begin()+4) = " ;
+     for(auto it: v1){ cout << it << " " ;}
+
+    //v1 = { 3 ,13 } ;
+    //v4 = { 3 ,5 ,7 ,9 ,11 ,13 } ;
+     v1 = v4 ; 
+     //after this v1 becomes v1 = { 3 , 5 ,7 ,9 ,11, 13 } 
+    cout << "\nprinting v1 after v1=v4   =>  " ;
+     for(auto it: v1) {
+        cout << it << " " ;
+     }
+
+    vector<int> v5(2 , 100) ;  //{ 2 , 100 }
+            //position   //value
+    v5.insert(v5.begin() , 50) ; //{50 , 2 , 100 }
+            //position   //times //value
+    v5.insert(v5.begin() , 2 , 17) ; // {17 ,17 , 50 , 2 ,100 }
+
+    cout << "\nprinting newly created v5 with insert() : " ;
+    for(auto it: v5){
+        cout << it << " " ;
+    }
+
+
 
 }
 
