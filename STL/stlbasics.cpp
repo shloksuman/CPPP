@@ -98,14 +98,134 @@ void expVector(){
         cout << it << " " ;
     }
 
+    //v.size()
+    //v.pop_back() ;
 
+    //v1.swap(v5) ;    ALL VALUES OF V1 GO TO V5 , AND VICE VERSA
+
+    //v.clear() ; //CLEARS ALL ELEMENTS
+
+    cout << "\ncheck if v5 is empty by v5.empty() = " << v5.empty() << endl ;
+
+}
+
+void expStack(){
+    //INSERTION DELETION POP - O(1) TIME COMPLEXITY
+    stack<int> s;
+    s.push(1); //{1}
+    s.push(2); //{2,1}
+    s.push(3); //{3,2,1}
+    s.emplace(5); //{5,3,2,1}
+
+    cout << "s.top() = " << s.top() << endl;
+    s.pop() ; //deletes top element 5 //{3,2,1} 
+
+    cout << "s.top() = " << s.top() << endl;
+    cout << "s.size() = " << s.size() << endl;
+    cout << "s.empty() = " << s.empty() << endl;
+
+    // s1.swap(s2) ;
+
+}
+
+void expQueue(){
+    //INSERTION DELETION POP - O(1) TIME COMPLEXITY
+    queue<int> q ; //FIFO 
+    q.push(1) ;  // {1}
+    q.push(2) ;  // {1,2}
+    q.push(3) ;  // {1,2,3}
+
+    q.back() += 5 ; //adds 5 to the last element
+
+    cout << "q.back()+= 5 =>  " << q.back() << endl ;
+
+    q.pop() ; //pops first element here 1
+
+    cout << "after pop() , print q.front() = " << q.front() << endl ;
+}
+
+void expPriorityQueue(){
+    //INSERTION - O(logn) TIME COMPLEXITY
+    //POP DELETION - O(logn) TIME COMPLEXITY
+    //TOP DELETION - O(1) TIME COMPLEXITY
+
+    //MAX HEAP - STORES MAX AT TOP
+    priority_queue<int> q ; 
+    q.push(6) ;  // {6}
+    q.push(2) ;  // {6,2}
+    q.push(12) ;  // {12,6,2}
+
+    cout << "priority queue top = " << q.top() << endl;
+
+    q.pop() ; //pops first element here 1
+
+    cout << "after pop() , print q.front() = " << q.top() << endl ;
+
+
+    //MIN HEAP - STORES MIN AT TOP
+    priority_queue<int , vector<int> , greater<int>> minq ; 
+    minq.push(7) ;  // {7}
+    minq.push(2) ;  // {2,7}
+    minq.push(8) ;  // {2,7,8}
+    minq.push(1) ;  // {1,2,7,8}
+
+    cout << "min heap priority queue top = " << minq.top() << endl;
+
+    minq.pop() ; //pops first element here 1
+
+    cout << "after pop() , print q.front() = " << minq.top() << endl ;
+}
+
+void expSet(){
+    set<int> s;
+    s.insert(12);
+    s.emplace(2);
+    s.insert(23);
+    s.insert(2);
+
+    auto it = s.find(12) ; //returns the address of the element 12
+    cout << "auto it = s.find(12) = " << *(it) << endl; 
+
+    auto it2 = s.find(25) ; //25 NOT PRESENT so it returns the address s.end() last element
+    cout << "auto it = s.find(25) = " << *(it2) << endl; 
+    auto it3 = s.find(23) ; //25 NOT PRESENT so it returns the address s.end() last element
+    cout << "auto it = s.find(23) = " << *(it3) << endl; 
+
+    s.erase(23) ;
+
+    //IF S.FINF(X) X IS NOT PRESENT , IT RETURNS THE SIZE OF SET S , SIMPLY
+
+    auto it4 = s.find(23) ; //25 NOT PRESENT so it returns the address s.end() last element
+    cout << "after s.erase(23) , auto it = s.find(23) = " << *(it4) << endl; 
+
+    int x = s.count(12) ; //12 exist , true , return 1
+    cout << "x count(12) = " << x << endl;
+    int y = s.count(47) ; //47 doesn't exist , false , return 0
+    cout << "y count(47) = " << y ;
+
+    auto it5 = s.find(12) ;
+    s.erase(it5) ; //also accept iterator to erase
+
+    s.insert(33);
+    s.insert(43);
+    s.insert(58);
+    s.insert(123);
+
+    auto it6 =s.find(33) ;
+    auto it7 =s.find(58) ;
+    s.erase(it6 , it7) ; //deletes between [33 , 58)
+
+    
 
 }
 
 int main(){
 
-expPair();
-expVector();
-
+// expPair();
+// expVector();
+// expStack();
+// expQueue();
+// expPriorityQueue();
+expSet();
     return 0;
 }
