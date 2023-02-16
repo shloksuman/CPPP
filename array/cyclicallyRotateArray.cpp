@@ -31,6 +31,22 @@ void rotateArray(int arr[], int n){
     }
 }
 
+// 	void rotate(int arr[] , int n){
+// 	    int i = 0 ;
+// 	    while(i+1<n){
+// 	        swap(arr[i] , arr[i+1]);
+// 	        i++;
+// 	    }
+// 	}
+	
+// 	void leftRotate(int arr[], int k, int n) 
+// 	{ 
+
+//     while(k--){
+//    rotate(arr , n) ;
+// 	} 
+// 	}
+
 int main(){
 
     int arr[100];
