@@ -9,7 +9,7 @@ void printarray(int arr[] , int n){
 
 void solve(int arr[], int n){
     int j = -1 ;
-    for(int i=0 ; i<n ; i++ ){
+    for(int i=0 ; i<n ; i++ ){ //bringing j pointer to the first position where 0 occurs
         if(arr[i]==0){
             j=i;
             break;
