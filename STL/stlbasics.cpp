@@ -1,4 +1,6 @@
+
 #include<bits/stdc++.h>
+
 using namespace std;
 
 void expPair(){
@@ -215,8 +217,9 @@ void expSet(){
     auto it7 =s.find(58) ;
     s.erase(it6 , it7) ; //deletes between [33 , 58)
 
-    
-
+    cout << "\nthis is working bice good fine! " ;
+    cout << "\ngit command is running well! awesome " ;
+ 
 }
 
 int main(){
