@@ -133,7 +133,7 @@ void explainList(){
     ls.push_front(6) ;
     ls.emplace_front(9);
 
-    
+
 }
 
 
@@ -248,13 +248,72 @@ void expSet(){
  
 }
 
+void expMultiSet(){
+    //STORES EVERYTHING BUT IN SORTED ORDER
+
+    multiset<int> ms;
+    ms.insert(1);
+    ms.insert(1);
+    ms.insert(1);
+    ms.insert(1); // {1,1,1,1 }
+
+    cout << "\nprinting multiset ms = { " ;
+    for(auto it: ms){
+        cout << it << " " ;
+    }
+    cout << "} " << endl;
+
+    cout << "\nUsing ms.erase(1) to erase every 1s from multiset " ;
+
+    ms.erase(1) ;
+
+    cout << "\nprinting multiset ms = { " ;
+    for(auto it: ms){
+        cout << it << " " ;
+    }
+    cout << "} " << endl;
+
+    ms.insert(2);
+    ms.insert(2);
+    ms.insert(2);
+    ms.insert(2);
+    ms.insert(1);
+    ms.insert(7);
+    ms.insert(11);
+
+    cout << "\nInserted ms.insert(2) four times again : " ;
+
+    cout << "\nprinting multiset ms = { " ;
+    for(auto it: ms){
+        cout << it << " " ;
+    }
+    cout << "} " << endl;
+
+    int cnt1 = ms.count(1) ;
+    int cnt2 = ms.count(2) ;
+
+    cout << "\ncnt1 = ms.count(1) = " << cnt1 << endl;
+    cout << "\ncnt2 = ms.count(2) = " << cnt2 << endl;
+
+   // ms.erase(ms.find(2) , ms.find(2) + 2 ) ; //not working
+
+
+}
+
+
+
+
+
 int main(){
 
- expPair();
- expVector();
+//expPair();
+//expVector();
 // expStack();
 // expQueue();
 // expPriorityQueue();
 // expSet();
+expMultiSet();
+
+
     return 0;
 }
