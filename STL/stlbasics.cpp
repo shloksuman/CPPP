@@ -14,6 +14,10 @@ void expPair(){
 
     cout << "t.first : " << t.first << " t.second.first : " << t.second.first << "    t.second.second : " << t.second.second <<   endl ;
 
+    t.first = 16 ;
+
+    cout << "\nChanged t.first = " << t.first << endl ;
+
 }
 
 void expVector(){
@@ -46,7 +50,7 @@ void expVector(){
     it++ ; 
     cout << "after it++ =  " << *(it) << endl; //prints the value at address it
 
-    it  = it + 2 ;  // jumps two places to the right i.e from 1st to 3rd
+    it  = it + 2 ;  // jumps two places to the right i.e here from 2nd to 4th
     cout << "after it+2  =  " << *(it) << endl ; 
 
     //v1.back() = prints last element of the vector
@@ -100,8 +104,17 @@ void expVector(){
         cout << it << " " ;
     }
 
-    //v.size()
-    //v.pop_back() ;
+    cout << "\nvector v : " ;
+    for(auto it : v){
+        cout << it << " " ;
+    }
+
+    cout << "\nsize of vector v : " << v.size() << endl ;
+    v.pop_back() ;
+    cout << "after pop_back , we have v : " ;
+    for(auto it = v.begin() ; it!=v.end() ; it++){
+        cout << *(it) << " " ;
+    }
 
     //v1.swap(v5) ;    ALL VALUES OF V1 GO TO V5 , AND VICE VERSA
 
@@ -110,6 +123,19 @@ void expVector(){
     cout << "\ncheck if v5 is empty by v5.empty() = " << v5.empty() << endl ;
 
 }
+
+void explainList(){
+    list<int> ls;
+
+    ls.push_back(4);
+    ls.emplace_back(2);
+
+    ls.push_front(6) ;
+    ls.emplace_front(9);
+
+    
+}
+
 
 void expStack(){
     //INSERTION DELETION POP - O(1) TIME COMPLEXITY
@@ -224,11 +250,11 @@ void expSet(){
 
 int main(){
 
-// expPair();
-// expVector();
+ expPair();
+ expVector();
 // expStack();
 // expQueue();
 // expPriorityQueue();
-expSet();
+// expSet();
     return 0;
 }
