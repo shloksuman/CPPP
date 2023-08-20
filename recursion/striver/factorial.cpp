@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-//functional
+//functional //FACTORIAL OF N
 int solve2(int n){
     if(n==0) return 1;
 
@@ -9,7 +9,7 @@ int solve2(int n){
 }
 
 
-//parameterised
+//parameterised //SUM OF FIRST N NUMBERS
 int solve(int i , int sum){
     if(i<1) return sum ;
    // sum = sum + i ;
