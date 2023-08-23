@@ -17,6 +17,8 @@ int main(){
 
     free(ptr); // de allocates the allocated memory
 
+    //adding to comment to make a sample commit
+
 
 return 0;
 }
