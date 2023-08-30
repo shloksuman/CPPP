@@ -1,5 +1,1 @@
- // int size ;
-    // cin >> size ;
-    // for(int i= 0 ; i<size ; i++){
-    //     cin >> v[i] ;
-    // }
+                cout << "\ni= " << i << endl;
