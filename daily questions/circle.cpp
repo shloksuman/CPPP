@@ -59,9 +59,74 @@
 //     return 0;
 // }
 
+// #include <iostream>
+// #include <vector>
+// #include <map>
+
+// using namespace std;
+
+// int gcdd(int a, int b) {
+//     while (b != 0) {
+//         int temp = b;
+//         b = a % b;
+//         a = temp;
+//     }
+//     return a;
+// }
+
+// int countBalancedSubstrings(int n, int x, int y, const string &s) {
+//     map<pair<int, int>, int> ratioCount; // Map to store ratio counts
+//     int count0 = 0, count1 = 0;
+//     long long balancedSubstrCount = 0;
+
+//     ratioCount[{0, 0}] = 1; // Base case
+
+//     for (int i = 0; i < n; ++i) {
+//         if (s[i] == '0') {
+//             count0++;
+//         } else {
+//             count1++;
+//         }
+
+//         int gcd = gcdd(count0, count1); // Calculate the greatest common divisor
+
+//         // Calculate the reduced ratio based on gcd
+//         int reducedCount0 = count0 / gcd;
+//         int reducedCount1 = count1 / gcd;
+
+//         // Calculate the target ratio
+//         int targetCount0 = reducedCount0 * y;
+//         int targetCount1 = reducedCount1 * x;
+
+//         // Update the count of balanced substrings
+//         balancedSubstrCount += ratioCount[{targetCount0, targetCount1}];
+
+//         // Update the ratio count map
+//         ratioCount[{reducedCount0, reducedCount1}]++;
+//     }
+
+//     return balancedSubstrCount;
+// }
+
+// int main() {
+//     int n, x, y;
+//     string s;
+
+//     cin >> n;
+//     cin >> x >> y;
+//     cin >> s;
+
+//     int balancedSubstrCount = countBalancedSubstrings(n, x, y, s);
+//     cout << balancedSubstrCount << endl;
+
+//     return 0;
+// }
+
+
 #include <iostream>
 #include <vector>
 #include <map>
+#include <algorithm>
 
 using namespace std;
 
@@ -74,50 +139,38 @@ int gcdd(int a, int b) {
     return a;
 }
 
-int countBalancedSubstrings(int n, int x, int y, const string &s) {
-    map<pair<int, int>, int> ratioCount; // Map to store ratio counts
-    int count0 = 0, count1 = 0;
-    long long balancedSubstrCount = 0;
 
-    ratioCount[{0, 0}] = 1; // Base case
 
-    for (int i = 0; i < n; ++i) {
-        if (s[i] == '0') {
-            count0++;
-        } else {
-            count1++;
-        }
 
-        int gcd = gcdd(count0, count1); // Calculate the greatest common divisor
-
-        // Calculate the reduced ratio based on gcd
-        int reducedCount0 = count0 / gcd;
-        int reducedCount1 = count1 / gcd;
-
-        // Calculate the target ratio
-        int targetCount0 = reducedCount0 * y;
-        int targetCount1 = reducedCount1 * x;
-
-        // Update the count of balanced substrings
-        balancedSubstrCount += ratioCount[{targetCount0, targetCount1}];
-
-        // Update the ratio count map
-        ratioCount[{reducedCount0, reducedCount1}]++;
-    }
-
-    return balancedSubstrCount;
-}
 
 int main() {
-    int n, x, y;
-    string s;
+    int N, x, y;
+    cin >> N >> x >> y;
 
-    cin >> n;
-    cin >> x >> y;
+    string s;
     cin >> s;
 
-    int balancedSubstrCount = countBalancedSubstrings(n, x, y, s);
-    cout << balancedSubstrCount << endl;
+    map<pair<int, int>, int> prefix_ratios;
+    prefix_ratios[{0, 0}] = 1;
+
+    int zeros = 0, ones = 0;
+    long long count = 0;
+
+    for (char c : s) {
+        if (c == '0') zeros++;
+        else ones++;
+
+        int gcd = gcdd(x, y);
+        int ratio_x = x / gcd;
+        int ratio_y = y / gcd;
+
+        int required_zeros = ratio_x * ones - ratio_y * zeros;
+        count += prefix_ratios[{required_zeros, ones - zeros}];
+
+        prefix_ratios[{zeros - ones, zeros}]++;
+    }
+
+    cout << count << endl;
 
     return 0;
 }
