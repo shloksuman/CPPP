@@ -57,9 +57,10 @@ struct ListNode {
 
   }
 
-  node* merge(node* &head1 , node* head2){
-    node* p1 = head1;
-    node* p2 = head2;
+  node* merge(node* &p1 , node* &p2){
+    //base case
+    if(p1==NULL)return p2;
+    if(p2==NULL)return p1;
     node* dummyNode = new node(-1);
     node* p3= dummyNode;
 
@@ -75,16 +76,20 @@ struct ListNode {
         p3=p3->next;
     }
 
-    while(p1!=NULL){
-        p3->next= p1;
-        p1=p1->next;
-        p3=p3->next;
-    }
-    while(p2!=NULL){
-        p3->next= p2;
-        p2=p2->next;
-        p3=p3->next;
-    }
+    // while(p1!=NULL){
+    //     p3->next= p1;
+    //     p1=p1->next;
+    //     p3=p3->next;
+    // }
+    // while(p2!=NULL){
+    //     p3->next= p2;
+    //     p2=p2->next;
+    //     p3=p3->next;
+    // }
+
+    if(p1==NULL) p3->next = p2;
+    else p3->next = p1;
+
 
     return dummyNode->next;
 
@@ -115,7 +120,7 @@ int main(){
     node* h2 = NULL;
     int arr1[] = { 1 , 4 , 5 ,7 } ;
     int arr2[] = { 2 , 3 , 6 } ;
-    for(int i=0; i<4;i++){
+    for(int i=0; i < ( sizeof(arr1)/sizeof(arr1[0]) ) ; i++ ){
         insertAtTail(h1, arr1[i]);
     }
     for( int i=0 ; i<3 ; i++ ){
