@@ -311,8 +311,8 @@ int main(){
 // expStack();
 // expQueue();
 // expPriorityQueue();
-// expSet();
-expMultiSet();
+ expSet();
+// expMultiSet();
 
 
     return 0;
