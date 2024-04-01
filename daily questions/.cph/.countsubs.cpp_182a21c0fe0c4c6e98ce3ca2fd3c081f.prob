@@ -1,0 +1,1 @@
+{"name":"Local: countsubs","url":"c:\\Coding\\CPP\\daily questions\\countsubs.cpp","tests":[{"id":1710648019326,"input":"\"abada\"\n\"a\"\n\"zzz\"\n\"z\"","output":"6\n6"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Coding\\CPP\\daily questions\\countsubs.cpp","group":"local","local":true}
